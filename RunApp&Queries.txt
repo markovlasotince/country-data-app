@@ -1,0 +1,77 @@
+*** Instalation & start ***
+
+npm install 
+npm run dev
+
+
+*** Usage ***
+
+# subscriptions
+
+subscription{
+  loggedUsers{
+    id
+    email
+  }
+}
+
+# mutations
+
+mutation {
+  register(
+    input: {
+      email: "Pet@gmail.com"
+      password: "123456"
+      name: "Petarr Petrovic"
+    }
+  ) {
+    email
+    name
+    token
+  }
+}
+mutation {
+  login(email: "Pet@gmail.com", password: "123456") {
+    userId
+    token
+  }
+}
+
+
+# queries
+
+{
+  getCountryInfo(countryName: "serbia") {
+    capital
+    name
+    timezones
+    flag
+    currencies {
+      code
+      name
+      symbol
+    }
+    population
+    borders
+    weather {
+      currently {
+        time
+        currentTemperature
+        summary
+        icon
+        humidity
+      }
+      next8days{
+        summary
+        maxTemperature
+        minTemperature
+        icon
+        humidity
+      }
+    }
+  }
+}
+
+
+
+
