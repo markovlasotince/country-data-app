@@ -53,13 +53,3 @@ mongoose
   .catch(err => {
     console.log(err);
   });
-
-let id = 2;
-
-setInterval(() => {
-  pubsub.publish(MESSAGE_CREATED, {
-    messageCreated: { id, content: new Date().toString() }
-  });
-
-  id++;
-}, 1000);
